@@ -7,7 +7,7 @@ Jadi, setelah dikompilasi, program Python ini bakal minta masukan berupa teks, b
 
 ## Example
 Satu kalimat panjang yang diambil dari novel The Casual Vacancy oleh penulis legendaris J.K. Rowling
-```
+<pre>
 input : Her face was a synthesis of perfect symmetry and unusual proportion; he could have gazed at it for hours, trying to locate the source of its fascination.
-output : Her face was a synthesis of _complete balance_ and _strange balance_; he could have _stare_ at it for hours, trying to _place_ the _beginning_ of its fascination.
-```
+output : Her face was a synthesis of <b>complete balance</b> and <b>strange balance</b>; he could have <b>stare</b> at it for hours, trying to <b>place</b> the <b>beginning</b> of its fascination.
+</pre>
