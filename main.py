@@ -10,7 +10,8 @@ from nltk.corpus import brown
 from nltk.probability import *
 from nltk.corpus import wordnet
 from nltk import sent_tokenize, word_tokenize
-
+from nltk.tokenize.moses import MosesDetokenizer
+detokenizer = MosesDetokenizer()
 
 # 1. menghitung frekuensi dari korpus BROWN
 words = FreqDist()
@@ -23,7 +24,7 @@ def freq(word):
 
 #----------------------------------------
 # meminta masukan berupa kalimat/paragraf
-string = input("Enter a string :\n")
+string = input()
 
 # tokenisasi menjadi kalimat
 sents = sent_tokenize(string)
@@ -48,9 +49,10 @@ for sent in sents:
 				calon_pengganti[lemma.name()] = freq(lemma.name())
 		if len(calon_pengganti) > 0 :
 			final_word[difficultWord] = max(calon_pengganti, key=lambda i: calon_pengganti[i])
-
+	final_tokens = []
 	for token in tokens:
 		if token in difficultWords and token in final_word:
-			print(final_word[token], end=' ')
+			final_tokens.append(final_word[token])
 		else:
-			print(token, end=' ')
+			final_tokens.append(token)
+	print(detokenizer.detokenize(final_tokens, return_str=True))
